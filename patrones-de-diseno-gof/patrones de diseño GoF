@@ -1,0 +1,159 @@
+Patrones Gof
+Los patrones de diseño tienen como características:
+
+Son soluciones concretas. Proponen soluciones a problemas concretos, no son teorías genéricas.
+Son soluciones técnicas. Indican resoluciones técnicas basadas en Programación Orientada a Objetos (POO). En ocasiones tienen más utilidad con algunos lenguajes de programación y en otras son aplicables a cualquier lenguaje.
+Se utilizan en situaciones frecuentes. Debido a que se basan en la experiencia acumulada al resolver problemas reiterativos.
+Favorecen la reutilización de código. Ayudan a construir software basado en la reutilización, a construir clases reutilizables. Los propios patrones se reutilizan cada vez que se vuelven a aplicar.
+El uso de un patrón no se refleja en el código. Al aplicar un patrón, el código resultante no tiene por que delatar el patrón o patrones que lo inspiró. No obstante últimamente hay múltiples esfuerzos enfocados a la construcción de herramientas de desarrollo basados en los patrones y frecuentemente se incluye en los nombres de las clases el nombre del patrón en que se basan facilitando así la comunicación entre desarrolladores.
+Es difícil reutilizar la implementación de un patrón. Al aplicar un patrón aparecen clases concretas que solucionan un problema concreto y que no será aplicable a otros problemas que requieran el mismo patrón.
+Se clasifican según su propósito en:
+
+Patrones de Creación
+Se encargan de la creación de instancias de los objetos. Abstraen la forma en que se crean los objetos, permitiendo tratar las clases a crear de forma genérica, dejando para después la decisión de que clase crear o cómo crearla. Según donde se tome dicha decisión se pueden clasificar los patrones de creación en: patrones de creación de clases (la decisión se toma en los constructores de las clases y usan la herencia para determinar la creación de las instancias) Los patrones de creación son:
+
+Abstract Factory (Fábrica Abstracta): Permite trabajar con objetos de distintas familias de manera que las familias no se mezclen entre sí y haciendo transparente el tipo de familia concreta que se esté usando.
+Builder (Constructor virtual): Abstrae el proceso de creación de un objeto complejo, centralizando dicho proceso en un único punto.
+Factory Method (Método de fabricación): Centraliza en una clase constructora la creación de objetos de un subtipo de un tipo determinado, ocultando al usuario la casuística para elegir el subtipo que se crea.
+Prototype (Prototipo): Crea nuevos objetos clonándolos de una instancia ya existente.
+Singleton (Instancia única): Garantiza la existencia de una única instancia para una clase y la creación de un mecanismo de acceso global a dicha instancia.
+
+Patrones Estructurales
+Son los que plantean las relaciones entre clases, las combinan y forman estructuras mayores. Tratan de conseguir que los cambios en los requisitos de la aplicación no ocasionen cambios en las relaciones entre los objetos. Lo fundamental son las relaciones de uso entre los objetos, y éstas están determinadas por las interfaces que soportan los objetos. Estudian cómo se relacionan los objetos en tiempo de ejecución. Sirven para diseñar las interconexiones entre los objetos. Los patrones estructurales son:
+
+Adapter (Adaptador): Adapta una interfaz para que pueda ser utilizada por una clase que de otro modo no podría utilizarla.
+Bridge (Puente): Desacopla una abstracción de su implementación.
+Composite (Objeto compuesto): Permite tratar objetos compuestos como si de uno simple se tratase.
+Decorator (Envoltorio): Añade funcionalidad a una clase dinámicamente.
+Facade (Fachada): Provee de una interfaz unificada simple para acceder a una interfaz o grupo de interfaces de un subsistema.
+Flyweight (Peso ligero): Reduce la redundancia cuando gran cantidad de objetos poseen idéntica información.
+Proxy: Mantiene un representante de un objeto.
+
+Patrones de Comportamiento
+Plantea la interacción y cooperación entre las clases. Los patrones de comportamiento estudian las relaciones entre llamadas entre los diferentes objetos, normalmente ligados con la dimensión temporal. Los patrones de comportamiento son:
+
+Chain of Responsibility (Cadena de responsabilidad): Permite establecer la línea que deben llevar los mensajes para que los objetos realicen la tarea indicada.
+Command (Orden): Encapsula una operación en un objeto, permitiendo ejecutar dicha operación sin necesidad de conocer el contenido de la misma.
+Interpreter (Intérprete): Dado un lenguaje, define una gramática para dicho lenguaje, así como las herramientas necesarias para interpretarlo.
+Iterator (Iterador): Permite realizar recorridos sobre objetos compuestos independientemente de la implementación de estos.
+Mediator (Mediador): Define un objeto que coordine la comunicación entre objetos de distintas clases, pero que funcionan como un conjunto.
+Memento (Recuerdo): Permite volver a estados anteriores del sistema.
+Observer (Observador): Define una dependencia de uno-a-muchos entre objetos, de forma que cuando un objeto cambie de estado se notifique y actualicen automáticamente todos los objetos que dependen de él.
+State (Estado): Permite que un objeto modifique su comportamiento cada vez que cambie su estado interno.
+Template Method (Método plantilla): Define en una operación el esqueleto de un algoritmo, delegando en las subclases algunos de sus pasos, esto permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar su estructura.
+Visitor (Visitante): Permite definir nuevas operaciones sobre una jerarquía de clases sin modificar las clases sobre las que opera.
+Strategy (Estrategia): Permite disponer de varios métodos para resolver un problema y elegir cuál utilizar en tiempo de ejecución.
+
+
+
+//------practica------//
+
+
+Patrones de Creación
+
+singleton
+
+-Intancia unica de una clase
+-uso global de esta
+
+Caso:
+
+haciendo uso del patron singleton vamos a crear una clase para inicializar los parametros de configuracion de nuestro proyecto
+
+
+Factory
+
+-permite iinstanciar objetos en tiempo de ejecucion
+
+caso:
+
+Nesitamos procesar las ordenes de compra y calcular el costo que asumimos
+
+-PayPal - 6%
+-Visa - 5%
+-MasterCard - 4%
+
+Abstract factory
+
+-permite agrupar familias de objetos para su creacion
+-en pocas palabra es una fabrica de fabrica
+
+caso:
+
+
+Necesitamos publicar un mensaje en las distintas redes sociales y canales de chat:
+
+- facebook
+- Linkedin
+- Slack 
+
+Retos
+
+El reto que se nos presenta es que para cada canal de publicacion tenemos mas de una clase
+
+Adapter Pattern
+
+permite solucinar problemas de incompatibilidad entre clases
+
+Caso: Tenemos nuestro legacy code que permite publicar en nuestro fan page de facebook
+
+problema
+
+-facebook implementa una interfaz
+-pero slack no es compatible
+
+
+Decorator Pattern
+
+Este patron permite agregar comportamiento a nuestro objeto sin alterar su estructura.
+
+Caso:
+
+Tenemos una tienda de musica y queremos aplicar diferentes descuentos en base al cliente y la campaña actual
+
+Proxy Pattarn
+
+Es un patron que trabaja como intermedio para cambiar el comportamiento de una clase sin cambiar su estructura
+
+Caso:
+
+Queremos a acceder a los playlist de KODOTI publicados en el canal mde youtube
+
+
+retos 
+
+- los videos deben ser mostrados en nuestra pagina principal
+- se estima que se recibe 1.500 visitas al dia
+
+
+solucion
+
+-crear un proxy que se conecte al API de youtube.
+-El proxy usara un sistema de cache local
+
+
+
+Command Pattern
+
+Este patron permite resolver una operacion sin conocer el contenido de esta o el receptor
+
+El gran beneficio que aporta es la segregacion
+
+caso:
+
+cliente pago con metodo de pago con su targeta
+en el backend puede utilizar 3 metodos de proveedor
+Culqui, MercadoPago, PayU
+
+
+solucion
+
+crear una capa intermedia que se va llamar CommandHandler que va recivir una interfaz del comando y esa interfaz va resolover cualquira de los metodos que se eliga, aeste comando no le va interesar con cual de estos metodos trabaje al final solo este va ejecutar el comando que se necesite
+
+cada uno de los metodos se va convertir en un comando asi el commandHandler podra elejir cual se ejecutara
+
+Observer Pattern
+
+Este patron define un mecanismo para notificar un evento a su sus suscriptores
+
+

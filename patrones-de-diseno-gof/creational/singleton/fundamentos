@@ -1,0 +1,12 @@
+Patrones de Creación
+
+singleton
+
+-Intancia unica de una clase
+-uso global de esta
+
+Caso:
+
+haciendo uso del patron singleton vamos a crear una clase para inicializar los parametros de configuracion de nuestro proyecto
+
+

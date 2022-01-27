@@ -1,0 +1,41 @@
+
+//objetos
+caractericas:
+-estado
+-comportamiento
+-identidad
+ 
+
+ astraccion 
+ encapsulamiento
+ herencia
+ polimorfismo
+ relaciones:
+    -asociacion
+    -colaboracion
+
+ interfaces 
+ clases Abstractas
+
+
+ principios SOLID
+
+son recomendaciones para escribir un codigo mantenible, escalable y robusto
+
+recompensas por utilizar estos principios
+-alta cohesion
+-bajo acoplamiento
+
+1) S = Principio de responsabilidad unica:
+una clase debe tener una razon para existir mas no para cambiar
+
+2) O = Principio de abierto - cerrado:
+las piezas del software deben estar abiertas para la extension pero cerradas para la modificacion
+
+3) L = Principio de sustitucion de Liskov:
+Las clases subtipos deberian ser reemplazables por sus clases padres
+
+4) I = Principio de segregacion de interfaz:
+varias interfaces funcionan mejor que una sola
+
+5) D =  Principio de inversion de dependencia
